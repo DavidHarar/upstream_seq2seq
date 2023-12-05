@@ -1,0 +1,25 @@
+config:
+    # general
+    seed: 123
+    data_folder_path: './data/processed/'
+    lead1: "LI"
+    lead2: "LII"
+    # training
+    batch_size: 32
+    n_epochs: 10
+    # architecture - to be changed later and pushed out towards tuning
+    init_token: null
+    input_dimension: 1
+    output_dimension: 1               # these should remain constant
+    hidden_dimmension:  128           # d_model (int) – the number of expected features in the input (required)???
+    attention_heads: null             # number of attention heads, if None then d_model//64
+    encoder_number_of_layers: 2
+    decoder_number_of_layers: 2
+    dropout: 0.3
+    clip: 1
+    window: 500 
+    positional_encodings: False
+    stride: 0.25
+    n_iters:  500                      # plot intermediate results on validation every <n_iters> steps
+    num_plots: 5
+    model_type: "encoder"

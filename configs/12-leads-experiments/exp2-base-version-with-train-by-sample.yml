@@ -1,0 +1,28 @@
+config:
+    # general
+    seed: 123
+    data_folder_path: './data/processed/'
+    lead1: null
+    lead2: null
+    # training
+    batch_size: 32
+    n_epochs: 10
+    # architecture - to be changed later and pushed out towards tuning
+    init_token: null
+    input_dimension: 12
+    output_dimension: 12              
+    hidden_dimmension:  64           # d_model (int) – the number of expected features in the input (required)???
+    attention_heads: null             # number of attention heads, if None then d_model//64
+    encoder_number_of_layers: 4
+    decoder_number_of_layers: 4
+    dropout: 0.5
+    clip: 1
+    window: 500 
+    train_by_sample: 5
+    positional_encodings: False
+    stride: 0.75
+    n_iters:  50                      # plot intermediate results on validation every <n_iters> steps
+    num_plots: 5
+    model_type: "encoder"
+    saving_path: './models/exp2-base-version-with-train-by-sample'
+    plot_saving_path: './plots/exp2-base-version-with-train-by-sample'
