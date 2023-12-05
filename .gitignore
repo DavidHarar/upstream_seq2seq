@@ -1,2 +1,6 @@
 *.csv
 *.npy
+*.dat
+*.atr
+*.hea
+
