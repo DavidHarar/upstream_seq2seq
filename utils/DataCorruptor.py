@@ -5,7 +5,8 @@ import os
 
 class DataCorruptor():
     def __init__(self,
-                 processed_data_folder
+                 processed_data_folder,
+                 scrutiny_probs = None
                  ):
         
         # load noisy signals
@@ -28,16 +29,19 @@ class DataCorruptor():
         self.noise_signal_len = len(noise_signals[noise_str])
 
         # define probabilities for scrutiny types.
-        self.scrutiny_probs = \
-            [None]*31+\
-            ['Turn-off']*20+\
-            ['MA']*7+\
-            ['BW']*7+\
-            ['EM']*7+\
-            ['MA+BW']*7+\
-            ['MA+EM']*7+\
-            ['BW+EM']*7+\
-            ['MA+BW+EM']*7
+        if scrutiny_probs is not None:
+            self.scrutiny_probs = scrutiny_probs
+        else:
+            self.scrutiny_probs = \
+                [None]*31+\
+                ['Turn-off']*20+\
+                ['MA']*7+\
+                ['BW']*7+\
+                ['EM']*7+\
+                ['MA+BW']*7+\
+                ['MA+EM']*7+\
+                ['BW+EM']*7+\
+                ['MA+BW+EM']*7
 
     def corrupt_with_prob(self,signal):
         noise_type = random.choice(self.scrutiny_probs)

@@ -168,6 +168,7 @@ class TSTransformerEncoderCNN(nn.Module):
         if attention_heads is None:
             attention_heads=hidden_dimmension//64
         self.attention_heads = attention_heads
+        print('Num attention heads:', self.attention_heads)
 
         self.encoder = nn.Linear(input_dimension, hidden_dimmension) # using linear projection instead
         encoder_layer = TransformerEncoderLayer(hidden_dimmension, self.attention_heads, dim_feedforward, dropout, activation=activation)
