@@ -3,4 +3,4 @@
 *.dat
 *.atr
 *.hea
-
+*/__pycache__/*
